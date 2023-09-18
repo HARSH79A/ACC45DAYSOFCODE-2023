@@ -1,0 +1,9 @@
+#include<stdio.h>
+main()
+{
+    float P,R,T,S;
+    printf("ENTETR THE VALUE");
+    scanf("%f%f%f",&P,&R,&T);
+    S=(P*R*T)/100;
+    printf("THE SI OF %f %f and %f =%f",P,R,T,S);
+}
