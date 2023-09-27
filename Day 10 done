@@ -1,0 +1,12 @@
+def max_chocolates(X, Y):
+    if X < Y:
+        return 0  # Chef can't afford any chocolates
+    else:
+        return X // Y  # Maximum number of chocolates Chef can buy
+
+# Example usage:
+X = int(input("Enter the total amount of money (X rupees): "))
+Y = int(input("Enter the cost of one chocolate (Y rupees): "))
+
+max_chocolates_possible = max_chocolates(X, Y)
+print("Chef can buy a maximum of", max_chocolates_possible, "chocolates.")
