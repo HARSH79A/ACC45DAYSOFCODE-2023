@@ -1,0 +1,24 @@
+def calculate_shoot_time(X, Y, Z):
+    # Calculate the minimum time to reach the Goomba
+    min_time_to_reach_goomba = Y / X
+    
+    # Calculate the time difference between when the bullet hits the Goomba
+    # and when Z seconds have passed from now
+    time_difference = min_time_to_reach_goomba - Z
+    
+    # If the time difference is less than or equal to 0, Mario should shoot now
+    if time_difference <= 0:
+        return 0
+    
+    # Otherwise, Mario should shoot after the time difference
+    return min_time_to_reach_goomba
+
+# Replace X, Y, and Z with your specific values
+X = 5  # Replace with the bullet's speed in pixels per frame
+Y = 50  # Replace with the distance to the Goomba in pixels
+Z = 2  # Replace with the minimum time in seconds Mario wants to wait
+
+# Calculate the minimum time to shoot
+minimum_shoot_time = calculate_shoot_time(X, Y, Z)
+
+print(f"Shoot the bullet after {minimum_shoot_time:.2f} seconds.")
