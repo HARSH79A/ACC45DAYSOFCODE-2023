@@ -1,0 +1,24 @@
+def can_get_funded(X, Y, A, B):
+    total_helium_3 = X  # Total grams of Helium-3 available
+    power_per_gram = Y  # Units of power generated per gram of Helium-3
+    required_power = A  # Required power per year
+    project_duration = B  # Number of years for funding
+
+    total_power_generated = total_helium_3 * power_per_gram
+    total_required_power = required_power * project_duration
+
+    if total_power_generated >= total_required_power:
+        return True
+    else:
+        return False
+
+# Input values
+X = 1000  # Replace with the actual amount of Helium-3 in grams on the moon
+Y = 10   # Replace with the actual power generated per gram of Helium-3
+A = 5000  # Replace with the required power per year
+B = 10   # Replace with the number of years for funding
+
+if can_get_funded(X, Y, A, B):
+    print("The NEXTGEN project can get funded.")
+else:
+    print("The NEXTGEN project cannot get funded.")
