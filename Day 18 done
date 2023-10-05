@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2, num3, num4, num5;
+
+    // Input five numbers
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
+    printf("Enter the third number: ");
+    scanf("%d", &num3);
+    printf("Enter the fourth number: ");
+    scanf("%d", &num4);
+    printf("Enter the fifth number : ");
+    scanf("%d", &num5);
+
+    // Find the maximum among the five numbers
+    int maximum = num1;
+    if (num2 > maximum) {
+        maximum = num2;
+    }
+    if (num3 > maximum) {
+        maximum = num3;
+    }
+    if (num4 > maximum) {
+        maximum = num4;
+    }
+    if (num5 > maximum) {
+        maximum = num5;
+    }
+
+    // Print the result
+    printf("The greatest integer among the five numbers is: %d\n", maximum);
+
+    return 0;
+}
