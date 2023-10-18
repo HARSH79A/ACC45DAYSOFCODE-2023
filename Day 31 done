@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int isPossible(int N, int X, int Y) {
+    if (N * X < Y || Y % X != 0) {
+        return 0; // It's impossible to achieve exactly Y marks
+    }
+
+    if (N == 1) {
+        return Y == X || Y == 0; // Either get X marks or 0 marks in a single problem
+    }
+
+    // Recursively check if it's possible for Chef to achieve Y - X marks
+    return isPossible(N - 1, X, Y - X) || isPossible(N - 1, X, Y);
+}
+
+int main() {
+    int N, X, Y;
+    printf("Enter the number of problems (N): ");
+    scanf("%d", &N);
+    printf("Enter the marks per problem (X): ");
+    scanf("%d", &X);
+    printf("Enter the target marks (Y): ");
+    scanf("%d", &Y);
+
+    if (isPossible(N, X, Y)) {
+        printf("It is possible to achieve %d marks.\n", Y);
+    } else {
+        printf("It is impossible to achieve %d marks.\n", Y);
+    }
+
+    return 0;
+}
