@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int N, X;
+    int eligibleVoters = 0;
+
+    printf("Enter the number of people in Chefland: ");
+    scanf("%d", &N);
+
+    printf("Enter the minimum voting age (X): ");
+    scanf("%d", &X);
+
+    for (int i = 0; i < N; i++) {
+        int A;
+        printf("Enter the age of person %d: ", i + 1);
+        scanf("%d", &A);
+
+        if (A >= X) {
+            eligibleVoters++;
+        }
+    }
+
+    printf("The number of eligible voters in Chefland is: %d\n", eligibleVoters);
+
+    return 0;
+}
