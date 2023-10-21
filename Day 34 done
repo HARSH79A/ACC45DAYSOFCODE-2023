@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int X, Y, A, B;
+
+    // Input the values of X, Y, A, and B
+    printf("Enter the initial amount of hot water (X): ");
+    scanf("%d", &X);
+    printf("Enter the initial amount of cold water (Y): ");
+    scanf("%d", &Y);
+    printf("Enter the initial temperature (A): ");
+    scanf("%d", &A);
+    printf("Enter the desired temperature (B): ");
+    scanf("%d", &B);
+
+    // Calculate the required temperature change
+    int temperature_change = B - A;
+
+    // Check if it's possible to achieve the desired temperature
+    if ((temperature_change > 0 && temperature_change <= X) || (temperature_change < 0 && temperature_change >= -Y)) {
+        printf("Chef can achieve the desired temperature for a perfect bath.\n");
+    } else {
+        printf("Chef cannot achieve the desired temperature for a perfect bath.\n");
+    }
+
+    return 0;
+}
