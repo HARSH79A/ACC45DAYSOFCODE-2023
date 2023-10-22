@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+// Function to check if it's possible to measure the weight
+// using the given weights X, Y, and Z.
+int canMeasureWeight(int W, int X, int Y, int Z) {
+    // If W is equal to any of the individual weights, return YES.
+    if (W == X || W == Y || W == Z) {
+        return 1; // YES
+    }
+    
+    // If W is equal to the sum of any two of the weights, return YES.
+    if (W == X + Y || W == X + Z || W == Y + Z) {
+        return 1; // YES
+    }
+    
+    // If W is equal to the sum of all three weights, return YES.
+    if (W == X + Y + Z) {
+        return 1; // YES
+    }
+    
+    // Otherwise, it's not possible to measure the weight exactly.
+    return 0; // NO
+}
+
+int main() {
+    int W, X, Y, Z;
+    printf("Enter the weight of the object (W): ");
+    scanf("%d", &W);
+    printf("Enter the weights X, Y, and Z: ");
+    scanf("%d %d %d", &X, &Y, &Z);
+
+    if (canMeasureWeight(W, X, Y, Z)) {
+        printf("YES\n");
+    } else {
+        printf("NO\n");
+    }
+
+    return 0;
+}
