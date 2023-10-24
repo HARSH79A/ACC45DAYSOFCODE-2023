@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int S, X, Y, Z;
+    printf("Enter the total storage (S MB): ");
+    scanf("%d", &S);
+    printf("Enter the memory occupied by the first app (X MB): ");
+    scanf("%d", &X);
+    printf("Enter the memory occupied by the second app (Y MB): ");
+    scanf("%d", &Y);
+    printf("Enter the memory requirement of the third app (Z MB): ");
+    scanf("%d", &Z);
+
+    int appsToDelete = 0;
+    
+    // Calculate the remaining storage after installing the third app
+    int remainingStorage = S - Z;
+
+    // Calculate the current total memory occupied by the two apps
+    int currentTotalMemory = X + Y;
+
+    if (remainingStorage < 0) {
+        // Chef doesn't have enough storage to install the third app.
+        // Calculate how many apps he needs to delete.
+        while (remainingStorage + currentTotalMemory < 0) {
+            if (X > Y) {
+                X = 0;
+            } else {
+                Y = 0;
+            }
+            appsToDelete++;
+            currentTotalMemory = X + Y;
+        }
+    }
+
+    printf("Chef needs to delete %d app(s) to install the third app.\n", appsToDelete);
+    
+    return 0;
+}
