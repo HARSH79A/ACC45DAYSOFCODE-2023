@@ -1,0 +1,30 @@
+// to calculate bill on the basis of units consumed
+#include<stdio.h>
+
+int main()
+{
+    int x;
+    float bill;
+    printf("enter the amount of unit consumed = ");
+    scanf("%d",&x);
+    if(x==0){
+        printf("the bill is = 100");
+    }
+    else if(x>0 && x<=150){
+        bill=x*1.20;
+        printf("the bill is = %f",bill);
+    }
+    else if(x>150 && x<=200){
+        bill=x*1.50;
+        printf("the bill is = %f",bill);
+    }
+    else if(x>200 && x<=300){
+        bill=x*2.50;
+        printf("the bill is = %f",bill);
+    }
+    else if(x>300){
+        bill=x*3;
+        printf("the bill is = %f",bill);
+    }
+    return 0;
+}
