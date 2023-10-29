@@ -1,0 +1,34 @@
+// to calculate total home expenses 
+#include <stdio.h>
+
+int main() {
+    float rent, utilities, groceries, entertainment, totalExpenses;
+
+    // Input expenses
+    printf("Enter monthly rent: $");
+    scanf("%f", &rent);
+
+    printf("Enter monthly utilities: $");
+    scanf("%f", &utilities);
+
+    printf("Enter monthly groceries: $");
+    scanf("%f", &groceries);
+
+    printf("Enter monthly entertainment expenses: $");
+    scanf("%f", &entertainment);
+
+    // Calculate total expenses
+    totalExpenses = rent + utilities + groceries + entertainment;
+
+    // Display the result
+    printf("\nExpense Breakdown:\n");
+    printf("Rent: $%.2f\n", rent);
+    printf("Utilities: $%.2f\n", utilities);
+    printf("Groceries: $%.2f\n", groceries);
+    printf("Entertainment: $%.2f\n", entertainment);
+    printf("--------------------\n");
+    printf("Total Expenses: $%f\n", totalExpenses);
+
+    return 0;
+}
+
