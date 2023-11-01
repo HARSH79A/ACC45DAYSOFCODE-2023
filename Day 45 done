@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int N, M;
+
+    // Input the number of friends and the number of left shoes Chef already has.
+    printf("Enter the number of friends (N): ");
+    scanf("%d", &N);
+    printf("Enter the number of left shoes Chef already has (M): ");
+    scanf("%d", &M);
+
+    // Calculate the minimum number of extra right shoes needed to form N pairs.
+    int extra_shoes = N - (M < N ? M : N);
+
+    if (extra_shoes < 0) {
+        extra_shoes = 0;  // Chef already has enough shoes for N friends.
+    }
+
+    // Output the result.
+    printf("Chef must buy at least %d extra shoes to ensure N=%d pairs of shoes.\n", extra_shoes, N);
+
+    return 0;  // Exit the program successfully.
+}
