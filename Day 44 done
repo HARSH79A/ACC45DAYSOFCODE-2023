@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int X, Y;
+    
+    // Input the total movie duration (X) and the first Y minutes to be watched at double speed.
+    printf("Enter the total movie duration (X) in minutes: ");
+    scanf("%d", &X);
+    printf("Enter the duration of the first Y minutes to be watched at double speed: ");
+    scanf("%d", &Y);
+    
+    if (Y % 2 != 0) {
+        printf("Y must be even. Please enter an even value for Y.\n");
+        return 1; // Exit the program with an error code.
+    }
+
+    // Calculate the total time Chef will spend watching the movie.
+    int total_time = Y / 2 + (X - Y);
+    
+    // Output the result.
+    printf("Chef will spend %d minutes watching the movie in total.\n", total_time);
+    
+    return 0; // Exit the program successfully.
+}
