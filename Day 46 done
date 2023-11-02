@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int X, Y, D;
+
+    // Input the skills of the two teams and the threshold D
+    printf("Enter the skill of the first team (X): ");
+    scanf("%d", &X);
+
+    printf("Enter the skill of the second team (Y): ");
+    scanf("%d", &Y);
+
+    printf("Enter the threshold skill difference (D): ");
+    scanf("%d", &D);
+
+    // Calculate the absolute difference between the skills
+    int skillDifference = abs(X - Y);
+
+    // Check if Chef finds the game interesting
+    if (skillDifference <= D) {
+        printf("Chef finds the game interesting!\n");
+    } else {
+        printf("Chef does not find the game interesting.\n");
+    }
+
+    return 0;
+}
